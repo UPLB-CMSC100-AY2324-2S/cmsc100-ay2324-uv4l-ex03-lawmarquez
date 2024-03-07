@@ -1,3 +1,14 @@
+/*
+    Lawrence Oliver U. Marquez
+    2020-10593
+    CMSC 100 UV4L
+*/
+/*
+    This function checks if the passwords provided meets these criteria:
+    The provided password should be the same, at least 8 characters long,
+    contains a number, lowercase, and uppercase letter.
+    It returns true if the password matches the criteria, otherwise false.
+*/
 
 function validatePassword(pass,pass2){
     if (pass === pass2){
@@ -30,6 +41,7 @@ function validatePassword(pass,pass2){
     }
 }
 
+//  This function reverses the characters of the given string.
 function reversePassword(pass){
     let splitPass = pass.split("")
     let reversed = ""
@@ -38,6 +50,10 @@ function reversePassword(pass){
     }
     return reversed;
 }
+
+/*  This function stores a user's name and password, reversing the password if it passes validation.
+    Returns an object with the user's name and password.
+*/
 
 function storePassword(name,pass,pass2){
     let newPass = pass;
@@ -51,5 +67,6 @@ function storePassword(name,pass,pass2){
     return user;
 }
 
+//Test cases
 console.log(storePassword("John Valid", "Pass1234", "Pass1234"))
 console.log(storePassword("John Invalid", "Pass123", "Pass12345"))
